@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+</head>
+
+<body>
+    <div id="test"></div>
+    <div id="date"></div>
+    <div id="test1"></div>
+    <button onclick="this.style.visibility='hidden'">
+        Click to Remove Me!
+    </button>
+    <button onclick="myFunction()" style="width: auto;height: auto;"> Click me!</button>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+
+                document.getElementById("test").innerHTML = eval("(" + JSON.parse(this.responseText).age + ")");
+                objString = JSON.stringify(JSON.parse(this.responseText));
+                document.getElementById("date").innerHTML = objString;
+                document.getElementById("test1").innerHTML = typeof(objString)
+            }
+        };
+
+        xhttp.open("GET", "ajax_info.txt", true);
+        xhttp.send();
+        // Storing data:
+        // myObj = { name: "John", age: 31, city: "New York" };
+        // myJSON = JSON.stringify(myObj);
+        // localStorage.setItem("testJSON", myJSON);
+
+        // // Retrieving data:
+        // text = localStorage.getItem("testJSON");
+        // obj = JSON.parse(text);
+        // document.getElementById("test").innerHTML = obj.name;
+        // document.cookie = "username=John Smith; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+        // console.log("<<<<<<<<>>>>>>>> " , document.cookie)
+        // var node = document.createElement("p");
+        // var textNode = document.createTextNode(
+        //     navigator.onLine);
+        // node.appendChild(textNode);
+        // var div = document.getElementById('test1');
+        // div.appendChild(node);
+
+        // function Person17(fname, lname, age) {
+        //     this.firstName = fname;
+        //     this.lastName = lname;
+        //     this.age = age;
+        // }
+        // var add = (function () {
+        //     var counter = 0;
+        //     return function () { counter += 1; return counter }
+        // })();
+        Math.r
+        // ;
+        // console.log(">>>>>>> add  " + add());
+        // console.log(">>>>>>> add  " + add());
+        // console.log(">>>>>>> add  " + add());
+        // var newPerson = new Person17("ahmed", "abdelbadiea", 17);
+        // Person17.prototype.name = function () {
+        //     return this.firstName + " " + this.lastName;
+        // };
+        // console.log(">>>>>>>   " + newPerson.name());
+        // var obj = new Object();
+        // obj.firstName = "ahmed";
+        // obj.lastName = "abdelbadie";
+
+        // let x = 3;
+        // var typeconv = "ahmed";
+        // typeconv = 8;
+        // var arr = ["ahmed", "mohamed", "mahmoud"]
+        // console.log("x is " + x)
+        // var person1 = {
+        //     firstName: "John",
+        //     lastName: "Doe",
+        //     id: 5566,
+        // };
+        // class Car {
+        //     constructor(brand) {
+        //         this.carname = brand;
+        //     }
+        //     getCar() {
+        //         return this.carname;
+        //     }
+        // }
+        // var person2 = {
+        //     fullname: function () {
+        //         return this.firstName + " " + this.lastName;
+        //     }
+        // }
+        // function myFunction() {
+        //     document.getElementById("date").innerHTML = new Car('ferarri').getCar();
+        // }
+
+
+        // document.getElementById('test').innerHTML = (function () {
+        //     var x = "Hello!!";  // I will invoke myself
+        //     return x;
+        // })();;
+        // function concat() {
+        //     //debugger;
+        //     var txt = " ";
+        //     for (x in obj) {
+        //         console.log(x);
+        //         txt += obj[x] + "  ";
+        //     }
+        //     return txt;
+        // }
+
+        // var decodedCookie = decodeURIComponent(document.cookie);
+
+    </script>
+
+</body>
+
+</html>

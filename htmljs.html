@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <title>this is Js Form</title>
+    <script>
+        function register() {
+
+            var info = new Array();
+            info[0] = document.getElementById("firstname").value;
+            info[1] = document.getElementById("lastname").value;
+            info[2] = document.getElementById("email").value;
+            info[3] = document.getElementById("pass").value;
+            document.getElementById("test").innerHTML = info[1];
+            var h = new Array();
+            h[0] = "<span style='color:red'>please typre your name</span>"
+            h[1] = "<span style='color:red'>please typre your last name</span>"
+            h[2] = "<span style='color:red'>please typre your email!</span>"
+            h[3] = "<span style='color:red'>please typre your password</span>"
+            h[4] = "<span style='color:red'>please typre your password</span>"
+            var divs = new Array("fname", "lname", "em", "pa");
+            info.forEach((element, i) => {
+                console.log(">>>>>>>", i)
+                var error = h[i];
+                var div = divs[i];
+                if (element == "") {
+                    document.getElementById(div).innerHTML = error;
+                } else {
+                    document.getElementById(div).innerHTML = "OK";
+                }
+            });
+            if (document.getElementById("pass").value != document.getElementById("cpass").value) {
+                document.getElementById("cpa").innerHTML = "<span style='color:red'>pass deosn't match please renter it</span>";
+            } else {
+                document.getElementById("cpa").innerHTML = "OK";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <table border="2">
+
+        <tr>
+            <td>First Name:</td>
+            <td><input type="text" name="firstname" id="firstname" /></td>
+            <td>
+                <div id="fname"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td><input type="text" name="lastname" id="lastname" /></td>
+            <td>
+                <div id="lname"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" name="email" id="email" /></td>
+            <td>
+                <div id="em"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>password:</td>
+            <td><input type="text" name="pass" id="pass" /></td>
+            <td>
+                <div id="pa"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>confirm password:</td>
+            <td><input type="text" name="cpass" id="cpass" /></td>
+            <td>
+                <div id="cpa"></div>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <input type="button" value="submit" name="submit" onclick="register()" />
+    <p id="test"></p>
+    <article>
+        <header>
+          <h1>What Does WWF Do?</h1>
+          <p>WWF's mission:</p>
+        </header>
+        <p>WWF's mission is to stop the degradation of our planet's natural environment,
+        and build a future in which humans live in harmony with nature.</p>
+      </article>  
+</body>
+
+
+</html>
